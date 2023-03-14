@@ -1,4 +1,6 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6.QtWidgets import QHeaderView, QMessageBox
+
 import MainWindowDesign # Это наш конвертированный файл дизайна
 import re # Для запросов
 import os # Для БД
@@ -48,8 +50,8 @@ class ProdApp(QtWidgets.QWidget, MainWindowDesign.Ui_Form):
 
 		# Для масштабирования виджета таблицы
 		header = self.rules_table.horizontalHeader()
-		header.setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
-		header.setSectionResizeMode(1, QtWidgets.QHeaderView.Stretch)
+		header.setSectionResizeMode(0, QHeaderView.ResizeMode.Stretch)
+		header.setSectionResizeMode(1, QHeaderView.ResizeMode.Stretch)
 
 	def searchAnswer(self):
 		"""
@@ -62,7 +64,7 @@ class ProdApp(QtWidgets.QWidget, MainWindowDesign.Ui_Form):
 			rule_terms = self.offerToTerms(rule_if)
 
 			if self.checkRule(terms, rule_terms):
-				self.showMessage("Рекомендуемая профессия: " + rule_then, str(rule_if))
+				self.showMessage("Результат: " + rule_then, str(rule_if))
 				return
 
 		self.showMessage("Ответ на заданный вопрос отсутствует в Базе Знаний!", str(terms))
@@ -75,8 +77,8 @@ class ProdApp(QtWidgets.QWidget, MainWindowDesign.Ui_Form):
 		msg.setText(info)
 		msg.setWindowTitle("Экспертное заключение")
 		msg.setDetailedText(details)
-		msg.setStandardButtons(QtWidgets.QMessageBox.Ok)
-		msg.exec_()
+		msg.setStandardButtons(QMessageBox.StandardButton.Ok)
+		msg.exec()
 
 # ПРИЗНАКИ
 

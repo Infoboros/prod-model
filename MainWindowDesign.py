@@ -6,7 +6,10 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import QSizePolicy, QAbstractScrollArea
+
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -19,7 +22,7 @@ class Ui_Form(object):
         self.verticalLayout.setObjectName("verticalLayout")
         self.name_app_label = QtWidgets.QLabel(Form)
         self.name_app_label.setScaledContents(True)
-        self.name_app_label.setAlignment(QtCore.Qt.AlignCenter)
+        self.name_app_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.name_app_label.setObjectName("name_app_label")
         self.verticalLayout.addWidget(self.name_app_label)
         self.search_layout = QtWidgets.QHBoxLayout()
@@ -48,7 +51,7 @@ class Ui_Form(object):
         self.predict_layout.addWidget(self.pred_line)
         self.pred_add_delete_layout = QtWidgets.QHBoxLayout()
         self.pred_add_delete_layout.setObjectName("pred_add_delete_layout")
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
         self.pred_add_delete_layout.addItem(spacerItem)
         self.pred_add_btn = QtWidgets.QPushButton(Form)
         self.pred_add_btn.setMinimumSize(QtCore.QSize(0, 40))
@@ -67,7 +70,7 @@ class Ui_Form(object):
         self.predict_layout.addWidget(self.pred_list)
         self.pred_load_save_layout = QtWidgets.QHBoxLayout()
         self.pred_load_save_layout.setObjectName("pred_load_save_layout")
-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
         self.pred_load_save_layout.addItem(spacerItem1)
         self.pred_save_btn = QtWidgets.QPushButton(Form)
         self.pred_save_btn.setMinimumSize(QtCore.QSize(0, 40))
@@ -76,7 +79,7 @@ class Ui_Form(object):
         self.pred_load_save_layout.addWidget(self.pred_save_btn)
         self.predict_layout.addLayout(self.pred_load_save_layout)
         self.horizontalLayout.addLayout(self.predict_layout)
-        spacerItem2 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
+        spacerItem2 = QtWidgets.QSpacerItem(20, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
         self.horizontalLayout.addItem(spacerItem2)
         self.rules_layout = QtWidgets.QVBoxLayout()
         self.rules_layout.setObjectName("rules_layout")
@@ -96,7 +99,7 @@ class Ui_Form(object):
         self.rules_layout.addLayout(self.edit_layout)
         self.rule_add_delete_layout = QtWidgets.QHBoxLayout()
         self.rule_add_delete_layout.setObjectName("rule_add_delete_layout")
-        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
         self.rule_add_delete_layout.addItem(spacerItem3)
         self.rule_add_btn = QtWidgets.QPushButton(Form)
         self.rule_add_btn.setMinimumSize(QtCore.QSize(0, 40))
@@ -109,8 +112,8 @@ class Ui_Form(object):
         self.rules_layout.addLayout(self.rule_add_delete_layout)
         self.rules_table = QtWidgets.QTableWidget(Form)
         self.rules_table.setLineWidth(1)
-        self.rules_table.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-        self.rules_table.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContentsOnFirstShow)
+        self.rules_table.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.rules_table.setSizeAdjustPolicy(QAbstractScrollArea.SizeAdjustPolicy.AdjustToContentsOnFirstShow)
         self.rules_table.setObjectName("rules_table")
         self.rules_table.setColumnCount(2)
         self.rules_table.setRowCount(0)
@@ -131,7 +134,7 @@ class Ui_Form(object):
         self.rules_layout.addWidget(self.rules_table)
         self.load_save_layout = QtWidgets.QHBoxLayout()
         self.load_save_layout.setObjectName("load_save_layout")
-        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Minimum)
+        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QSizePolicy.Policy.Fixed, QSizePolicy.Policy.Minimum)
         self.load_save_layout.addItem(spacerItem4)
         self.rule_save_btn = QtWidgets.QPushButton(Form)
         self.rule_save_btn.setMinimumSize(QtCore.QSize(0, 40))
