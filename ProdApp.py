@@ -75,7 +75,7 @@ class ProdApp(QtWidgets.QWidget, MainWindowDesign.Ui_Form):
         question = self.search_line.text()
 
         if not self.output(question):
-            self.showMessage("Ответ на заданный вопрос отсутствует в Базе Знаний!", str(terms))
+            self.showMessage("Ответ на заданный вопрос отсутствует в Базе Знаний!", str(''))
 
     def showMessage(self, info, details):
         """
@@ -91,7 +91,7 @@ class ProdApp(QtWidgets.QWidget, MainWindowDesign.Ui_Form):
     # ПРИЗНАКИ
 
     def addPred(self):
-        text = self.getNormal(self.pred_line.text())
+        text = self.pred_line.text()
         if (text not in self._preds):
             self._preds.add(text)
             self.pred_list.addItem(text)
@@ -137,8 +137,8 @@ class ProdApp(QtWidgets.QWidget, MainWindowDesign.Ui_Form):
         """
         Добавление правила
         """
-        text_if = self.getNormal(self.rule_if_line.text())
-        text_then = self.getNormal(self.rule_then_line.text())
+        text_if = self.rule_if_line.text()
+        text_then = self.rule_then_line.text()
 
         if text_if not in self._rules and self.checkIf(text_if):
             i = self.rules_table.rowCount()
@@ -208,7 +208,6 @@ class ProdApp(QtWidgets.QWidget, MainWindowDesign.Ui_Form):
         """
         Создание правил из предложений
         """
-        offer = self.getNormal(offer)
 
         or_terms = []
         or_strings = self.splitOr(offer)
